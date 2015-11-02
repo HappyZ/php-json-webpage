@@ -1,0 +1,155 @@
+/*
+**	Author: LaiSi
+*/
+
+/* reset all */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none;margin:0;padding:0}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}a{text-decoration:none}.clear{clear:both}.pos-relative{position:relative}.pos-absolute{position:absolute}.vertical-base{vertical-align:baseline}.vertical-top{vertical-align:top}.underline{padding-bottom:5px;border-bottom:1px solid #eee;margin:0 0 20px}nav.vertical ul li{display:block}nav.horizontal ul li{display:inline-block}img{max-width:100%}
+
+/* general */
+html, body {
+font-family:"Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft YaHei",arial,sans-serif;
+font-size:100%;
+height:100%;
+background:#eee;
+color:#333
+}
+
+#wrapper {
+margin: 10px auto;
+width: 960px
+}
+
+#header, #nav, #slider, #showcase, #briefinfo, #title {
+margin-bottom: 15px;
+}
+
+/* header */
+#header {
+background:none;
+}
+
+#header a, #header li {
+display: inline-block;
+padding: 20px 10px  /*(4) top, right, bottom, left; (2) top&bottom, left&right; (1) all*/
+}
+
+.logo {
+width: 200px;
+}
+
+/* nav */
+#nav {
+background-color: #ddd;
+position: relative;
+z-index: 15
+}
+#nav .item {
+position: relative
+}
+#nav .item a {
+display: inline-block;
+background-color: #ddd;
+line-height: 25px;
+padding: 10px 20px
+}
+#nav .item a:hover {
+color: #fff;
+background-color: #333
+}
+#nav .subnav {
+display:none;
+position: absolute;
+top: 45px
+}
+
+/* footer */
+#footer {
+margin-top: 15px;
+text-align: center;
+}
+
+/* index */
+#slider {
+background-color: #ddd
+}
+
+#slider .bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
+#slider .bjqs-slide{position:absolute; display:none;}
+#slider .bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
+#slider .bjqs-controls.v-centered li a{position:absolute;}
+#slider .bjqs-controls.v-centered li.bjqs-next a{right:0;padding:10px 20px; color: #fff; background-color: #ccc;}
+#slider .bjqs-controls.v-centered li.bjqs-prev a{left:0;padding:10px 20px; color: #fff; background-color: #ccc;}
+#slider .bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
+#slider .bjqs-markers.h-centered{text-align: center;}
+#slider .bjqs-markers li{display:inline;}
+#slider .bjqs-markers li a{display:inline-block;}
+#slider .bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+
+#showcase {
+}
+.eachcase {
+height: 150px;
+width: 300px;
+background-color: #ddd;
+margin: 0 10px
+}
+#briefinfo {
+background-color: #ddd;
+line-height: 20px;
+padding: 10px
+}
+
+/* page title */
+#title div {
+line-height:40px
+}
+
+/* sidebar */
+#sidebar {
+width: 280px;
+margin-right: 20px;
+padding: 10px 0;
+background-color: #ddd;
+overflow: hidden
+}
+#sidebar .menu {
+position: relative
+}
+#sidebar .menu a {
+display: block;
+margin: 10px 0;
+background-color: #ccc;
+line-height: 25px;
+padding: 10px 20px
+}
+#sidebar .menu a:hover {
+color:#fff;
+background-color: #333;
+}
+#sidebar .submenu {
+}
+#sidebar .submenu a {
+margin-left:20px;
+}
+#sidebar .current>a, #nav .current>a {
+color: #fff;
+background-color: #333;
+}
+
+/* content */
+#content {
+width: 640px;
+padding: 10px;
+background-color: #ddd;
+}
+
+/* misc */
+.clear {
+clear: both
+}
+.left {
+float: left
+}
+.right {
+float: right
+}
