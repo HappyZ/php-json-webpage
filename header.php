@@ -68,3 +68,27 @@
 		?>
 		<div class="clear"></div>
 	</div>
+	<div id="top-nav">
+		<nav class="clearfix">
+			<ul>
+			<?php 
+			// here we need to find a more efficient way, so whenever user refresh the page this will not be executed again (maybe keep this, and then later on we can add a cache function)
+			foreach ($navlinks->link as $link) {
+			?>
+			<li><a <?php echo "href='".$link['href']."'";?>><?php echo $link['title'];?></a></li>
+				<?php
+				if ($link->count() > 0) {
+				?>
+					<?php
+					foreach ($link->link as $sublink) { // only one level
+					?>
+					<li><a <?php echo "href='".$sublink['href']."'";?>><?php echo $sublink['title'];?></a></li>
+					<?php
+					}
+				}
+			}
+			?>
+			</ul>
+			<a href="#" id="pull">页面导航</a>
+		</nav>
+	</div>

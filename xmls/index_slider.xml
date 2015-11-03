@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <slider>
-	
+	<stuff>Stuff One</stuff>
+	<stuff>Stuff Two</stuff>
 </slider>

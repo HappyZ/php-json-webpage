@@ -16,7 +16,7 @@ color:#333
 
 #wrapper {
 margin: 10px auto;
-width: 960px
+width: 100%
 }
 
 #header, #nav, #slider, #showcase, #briefinfo, #title {
@@ -29,7 +29,7 @@ background:none;
 }
 
 #header a, #header li {
-display: inline-block;
+display: block;
 padding: 20px 10px  /*(4) top, right, bottom, left; (2) top&bottom, left&right; (1) all*/
 }
 
@@ -38,7 +38,74 @@ width: 200px;
 }
 
 /* nav */
+#top-nav {
+display: none;
+margin-bottom: 15px;
+}
+.clearfix {
+height:40px;
+width:100%;
+font-size:11pt;
+position:relative;
+z-index:16
+}
+.clearfix ul {
+padding:0;
+margin:0 auto;
+display:none;
+background:#ddd
+}
+.clearfix li {
+display:block
+}
+.clearfix a {
+color:#333;
+font-size:15px;
+font-weight:700;
+text-transform:uppercase;
+display:block;
+width:100%;
+text-indent:10px;
+text-align:left;
+text-decoration:none;
+line-height:40px
+}
+/* 
+.clearfix li a {
+border-bottom:1px solid rgba(90,85,73,0.17);
+box-sizing:border-box;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box
+}
+.clearfix li:last-child a {
+border-right:0
+}
+ */
+.clearfix a:hover,.clearfix a:active {
+background:#333;
+color:#FFF
+}
+.clearfix a#pull {
+font-size:20px;
+display:block;
+width:100%;
+position:relative;
+color:#fff;
+background-color:#333
+}
+.clearfix a#pull:after {
+background:url('../img/nav-icon.png') no-repeat;
+width:30px;
+content:"";
+width:30px;
+height:30px;
+display:inline-block;
+position:absolute;
+right:15px;
+top:10px
+}
 #nav {
+width: 100%;
 background-color: #ddd;
 position: relative;
 z-index: 15
@@ -70,28 +137,21 @@ text-align: center;
 
 /* index */
 #slider {
+height: 350px;
+position: relative;
 background-color: #ddd
 }
 
-#slider .bjqs{position:relative; list-style:none;padding:0;margin:0;overflow:hidden; display:none;}
-#slider .bjqs-slide{position:absolute; display:none;}
-#slider .bjqs-controls{list-style:none;margin:0;padding:0;z-index:9999;}
-#slider .bjqs-controls.v-centered li a{position:absolute;}
-#slider .bjqs-controls.v-centered li.bjqs-next a{right:0;padding:10px 20px; color: #fff; background-color: #ccc;}
-#slider .bjqs-controls.v-centered li.bjqs-prev a{left:0;padding:10px 20px; color: #fff; background-color: #ccc;}
-#slider .bjqs-markers{list-style: none; padding: 0; margin: 0; width:100%;}
-#slider .bjqs-markers.h-centered{text-align: center;}
-#slider .bjqs-markers li{display:inline;}
-#slider .bjqs-markers li a{display:inline-block;}
-#slider .bjqs-caption{display:block;width:96%;margin:0;padding:2%;position:absolute;bottom:0;}
+.slick-list,.slick-slider,.slick-track{position:relative;display:block}.slick-loading .slick-slide,.slick-loading .slick-track{visibility:hidden}.slick-slider{-moz-box-sizing:border-box;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent}.slick-list{overflow:hidden;margin:0;padding:0}.slick-list:focus{outline:0}.slick-list.dragging{cursor:pointer;cursor:hand}.slick-slider .slick-list,.slick-slider .slick-track{-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);-o-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.slick-track{top:0;left:0}.slick-track:after,.slick-track:before{display:table;content:''}.slick-track:after{clear:both}.slick-slide{display:none;float:left;height:100%;min-height:1px}[dir=rtl] .slick-slide{float:right}.slick-slide img{display:block}.slick-slide.slick-loading img{display:none}.slick-slide.dragging img{pointer-events:none}.slick-initialized .slick-slide{display:block}.slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}.slick-arrow.slick-hidden{display:none}
+.slick-arrow{position: absolute; background: none; border:0; height:100%;top:0;width:40px;font-size:30px;}
+.slick-prev{left:0}.slick-next{right:0}
 
 #showcase {
 }
 .eachcase {
 height: 150px;
-width: 300px;
+width: 100%;
 background-color: #ddd;
-margin: 0 10px
 }
 #briefinfo {
 background-color: #ddd;
@@ -152,4 +212,43 @@ float: left
 }
 .right {
 float: right
+}
+
+/* 自适应 */
+@media screen and (max-width: 500px) {
+	.logo {
+	width: 100%;
+	}
+	#header a, #header li {
+	float:left;
+	width: 100%;
+	}
+	#top-nav {
+	display: block;
+	}
+	#nav {
+	display:none;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	.eachcase {
+		width: 33.33%;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	#content {
+		width: 640px;
+	}
+	#sidebar {
+		width: 280px;
+	}
+	#wrapper {
+		width: 960px;
+	}
+	.eachcase {
+		width: 300px;
+		margin: 0 10px
+	}
 }
