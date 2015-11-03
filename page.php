@@ -18,7 +18,7 @@
 	$levels = explode('-', $xmlname);
 	$levelcount = count($levels);
 	require 'header.php';
-	$match = $navlinks->xpath('/navlinks/link[@href="page.php?name='.$levels[0].'"]')[0];
+	$match = $navlinks->xpath('/navlinks/link[@href="page-'.$levels[0].'.html"]')[0];
 	$sublevelcount = 0;
 	if (count($match) > 0)
 		$sublevelcount = $match->count();
@@ -33,7 +33,7 @@
 		<?php
 		foreach ($match->link as $link) {
 		?>
-		<li class="menu<?php if ($link['href'] == 'page.php?name='.$xmlname) echo ' current';?>"><a <?php echo 'href=\''.$link['href'].'\''?>><?php echo $link['title']?></a>
+		<li class="menu<?php if ($link['href'] == 'page-'.$xmlname.'.html') echo ' current';?>"><a <?php echo 'href=\''.$link['href'].'\''?>><?php echo $link['title']?></a>
 			<?php 
 			if ($link->count() > 0) {
 			?>
@@ -41,7 +41,7 @@
 			<?php
 				foreach ($link->sublink as $sublink) {
 			?>
-				<li class="subitem<?php if ('page.php?name='.$xmlname == $sublink['href']) echo ' current';?>"><a <?php echo 'href=\''.$sublink['href'].'\''?>><?php echo $sublink['title']?></a></li>
+				<li class="subitem<?php if ('page-'.$xmlname.'.html' == $sublink['href']) echo ' current';?>"><a <?php echo 'href=\''.$sublink['href'].'\''?>><?php echo $sublink['title']?></a></li>
 			<?php
 				}
 			?>

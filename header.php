@@ -45,7 +45,7 @@
 		// here we need to find a more efficient way, so whenever user refresh the page this will not be executed again (maybe keep this, and then later on we can add a cache function)
 		foreach ($navlinks->link as $link) {
 		?>
-		<div class="item left<?php if ($link['href'] == 'page.php?name='.$xmlname) echo ' current';?>">
+		<div class="item left<?php if ($link['href'] == 'page-'.$xmlname.'.html') echo ' current';?>">
 			<a <?php echo "href='".$link['href']."'";?>><?php echo $link['title'];?></a>
 			<?php
 			if ($link->count() > 0) {
