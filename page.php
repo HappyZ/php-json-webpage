@@ -28,8 +28,11 @@
 		<div class="right">首页 > <?php echo $thisPage;?></div>
 		<div class="clear"></div>
 	</div>
+	<div id="content" <?php if ($sublevelcount == 0) echo "style='width: 940px'"; ?>>
+		<?php echo $mycontent;?>
+	</div>
 	<?php if ($sublevelcount > 0) { ?>
-	<ul id="sidebar" class="menu left">
+	<ul id="sidebar" class="menu">
 		<?php
 		foreach ($match->link as $link) {
 		?>
@@ -57,8 +60,5 @@
 	<?php 
 	}
 	?>
-	<div id="content" class="left" <?php if ($sublevelcount == 0) echo "style='width: 940px'"; ?>>
-		<?php echo $mycontent;?>
-	</div>
 	<div class="clear"></div>
 <?php require 'footer.php'; ?>

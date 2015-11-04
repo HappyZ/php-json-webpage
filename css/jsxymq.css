@@ -165,9 +165,9 @@ line-height:40px
 }
 
 /* sidebar */
-#sidebar {
-width: 280px;
-margin-right: 20px;
+#sidebar, #content {
+float:none;
+width: 100%;
 padding: 10px 0;
 background-color: #ddd;
 overflow: hidden
@@ -198,7 +198,6 @@ background-color: #333;
 
 /* content */
 #content {
-width: 640px;
 padding: 10px;
 background-color: #ddd;
 }
@@ -232,6 +231,9 @@ float: right
 }
 
 @media screen and (min-width: 500px) {
+	#sidebar {
+	margin-right: 20px;
+	}
 	.eachcase {
 		width: 33.33%;
 	}
@@ -239,9 +241,11 @@ float: right
 
 @media screen and (min-width: 960px) {
 	#content {
+		float:right;
 		width: 640px;
 	}
 	#sidebar {
+		float:right;
 		width: 280px;
 	}
 	#wrapper {
