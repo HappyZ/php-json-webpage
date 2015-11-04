@@ -6,40 +6,40 @@
 		title = '首&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;页'>
 	</link>
 	<link
-		href = 'page.php?name=jjfa'
+		href = 'page-jjfa.html'
 		title = '解决方案'>
 		<link
-			href = 'page.php?name=jjfa-fa1'
+			href = 'page-jjfa-fa1.html'
 			title = '方案1'>
 			<sublink
-				href = 'page.php?name=jjfa-fa1-1'
+				href = 'page-jjfa-fa1-1.html'
 				title = '方案1整体介绍' />
 			<sublink
-				href = 'page.php?name=jjfa-fa1-2'
+				href = 'page-jjfa-fa1-2.html'
 				title = '方案1价格咨询' />
 		</link>
 		<link
-			href = 'page.php?name=jjfa-fa2'
+			href = 'page-jjfa-fa2.html'
 			title = '方案2'>
 		</link>
 	</link>
 	<link
-		href = 'page.php?name=gsxw'
+		href = 'page-gsxw.html'
 		title = '公司新闻'>
 	</link>
 	<link
-		href = 'page.php?name=gywm'
+		href = 'page-gywm.html'
 		title = '关于我们'>
 		<link
-			href = 'page.php?name=gywm-gsjj'
+			href = 'page-gywm-gsjj.html'
 			title = '公司简介'>
 		</link>
 		<link
-			href = 'page.php?name=gywm-gsjg'
+			href = 'page-gywm-gsjg.html'
 			title = '公司架构'>
 		</link>
 		<link
-			href = 'page.php?name=gywm-lxwm'
+			href = 'page-gywm-lxwm.html'
 			title = '联系我们'>
 		</link>
 	</link>

@@ -70,6 +70,7 @@
 	</div>
 	<div id="top-nav">
 		<nav class="clearfix">
+			<a href="#" id="pull">页面导航</a>
 			<ul>
 			<?php 
 			// here we need to find a more efficient way, so whenever user refresh the page this will not be executed again (maybe keep this, and then later on we can add a cache function)
@@ -89,6 +90,5 @@
 			}
 			?>
 			</ul>
-			<a href="#" id="pull">页面导航</a>
 		</nav>
 	</div>
