@@ -13,12 +13,12 @@ $( document ).ready(function() {
 	$('#nav .item').mouseenter(function () {
 		$(this).children('#nav .subnav').finish().show();
 	}).mouseleave(function () {
-		$(this).children('#nav .subnav').finish().slideUp('slow');
+		$(this).children('#nav .subnav').finish().fadeOut('slow');
 	});
 	$('#slider').slick({
 		autoplay  : true,
-		prevArrow : '<button type="button" class="slick-prev"><</button>',
-		nextArrow : '<button type="button" class="slick-next">></button>'
+		prevArrow : '<button type="button" class="slick-prev">&lt;</button>',
+		nextArrow : '<button type="button" class="slick-next">&gt;</button>'
 	});
 });
 

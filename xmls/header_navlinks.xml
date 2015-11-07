@@ -3,20 +3,20 @@
 <navlinks>
 	<link
 		href = '.'
-		title = '首&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;页'>
+		title = '首&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;页&lt;span&gt;Index&lt;/span&gt;'>
 	</link>
 	<link
 		href = 'page-jjfa.html'
-		title = '解决方案'>
+		title = '解决方案&lt;span&gt;Solutions&lt;/span&gt;'>
 		<link
 			href = 'page-jjfa-fa1.html'
-			title = '方案1'>
+			title = '方案A&lt;span&gt;Solution A&lt;/span&gt;'>
 			<sublink
 				href = 'page-jjfa-fa1-1.html'
-				title = '方案1整体介绍' />
+				title = '方案A整体介绍' />
 			<sublink
 				href = 'page-jjfa-fa1-2.html'
-				title = '方案1价格咨询' />
+				title = '方案B价格咨询' />
 		</link>
 		<link
 			href = 'page-jjfa-fa2.html'
@@ -25,11 +25,11 @@
 	</link>
 	<link
 		href = 'page-gsxw.html'
-		title = '公司新闻'>
+		title = '公司新闻&lt;span&gt;News&lt;/span&gt;'>
 	</link>
 	<link
 		href = 'page-gywm.html'
-		title = '关于我们'>
+		title = '关于我们&lt;span&gt;About&lt;/span&gt;'>
 		<link
 			href = 'page-gywm-gsjj.html'
 			title = '公司简介'>
@@ -40,7 +40,7 @@
 		</link>
 		<link
 			href = 'page-gywm-lxwm.html'
-			title = '联系我们'>
+			title = '联系我们&lt;span&gt;Contact Us&lt;/span&gt;'>
 		</link>
 	</link>
 </navlinks>

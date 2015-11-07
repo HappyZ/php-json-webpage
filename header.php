@@ -25,7 +25,8 @@
 	<meta name="author" content="Lai4Tech" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="shortcut icon" href="favicon.ico" />
-	<link rel="stylesheet" href="css/jsxymq.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/base.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/jsxymq.css" type="text/css"/>
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="js/html5.js"></script>

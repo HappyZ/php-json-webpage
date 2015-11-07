@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <slider>
-	<stuff>Stuff One</stuff>
-	<stuff>Stuff Two</stuff>
+	<stuff><![CDATA[<img src="img/slider_1.jpg" width="100%"/>]]></stuff>
+	<stuff><![CDATA[<img src="img/slider_2.jpg" width="100%"/>]]></stuff>
+	<stuff><![CDATA[<img src="img/slider_3.jpg" width="100%"/>]]></stuff>
+	<stuff><![CDATA[<img src="img/slider_4.jpg" width="100%"/>]]></stuff>
 </slider>
