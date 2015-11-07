@@ -63,17 +63,45 @@ border-bottom: 1px solid #eee;
 }
 #nav .subitem a:hover{
 background: #666;
-color: #fff;
+color: #eee;
 text-shadow: 0 1px 0 #333; /* carved effect */
 -moz-text-shadow: 0 1px 0 #333;
 -webkit-text-shadow: 0 1px 0 #333;
 }
 #nav .subitem a:hover > span{
-color: #fff;
+color: #eee;
 }
 
 /* slider */
+#slider {
+box-shadow: 0 2px 4px #777;
+-moz-box-shadow: 0 2px 4px #777;
+-webkit-box-shadow: 0 2px 4px #777;}
 #slider:hover > .slick-arrow {
 display:inherit;
 background: rgba(255,255,255,.3);
+}
+
+/* showcase */
+#showcase .eachcase{
+box-shadow: 0 1px 2px #777;
+-moz-box-shadow: 0 1px 2px #777;
+-webkit-box-shadow: 0 1px 2px #777;
+}
+
+/* brief info */
+#briefinfo {
+background: url('../img/nav-bg.gif') top left repeat-x #ddd;
+color: #333;
+text-shadow: 0 1px 0 #ddd; /* carved effect */
+-moz-text-shadow: 0 1px 0 #ddd;
+-webkit-text-shadow: 0 1px 0 #ddd;
+box-shadow: 0 1px 2px #777;
+-moz-box-shadow: 0 1px 2px #777;
+-webkit-box-shadow: 0 1px 2px #777;
+}
+#briefinfo:hover{
+box-shadow: inset 0 3px 5px rgba(0,0,0,.2);
+-moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.2);
+-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.2);
 }

@@ -14,6 +14,10 @@ background:#fff;
 color:#333
 }
 
+a,a:hover {
+color: #333;
+}
+
 #wrapper {
 margin: 10px auto;
 width: 100%
@@ -26,11 +30,13 @@ margin-bottom: 15px;
 /* header */
 #header {
 background:none;
+padding: 20px;
 }
 
 #header a, #header li {
 display: block;
-padding: 20px 10px  /*(4) top, right, bottom, left; (2) top&bottom, left&right; (1) all*/
+margin-right:10px;
+/* padding: 20px 10px  /*(4) top, right, bottom, left; (2) top&bottom, left&right; (1) all*/ */
 }
 
 .logo {
@@ -133,7 +139,7 @@ text-align: left;
 
 /* footer */
 #footer {
-margin-top: 15px;
+margin: 15px 0;
 text-align: center;
 }
 
@@ -159,6 +165,12 @@ background-color: #ddd;
 line-height: 20px;
 padding: 10px
 }
+#briefinfo li{
+line-height:20px;
+padding: 5px 10px;
+margin-right:20px;
+float: left;
+}
 
 /* page title */
 #title div {
@@ -167,14 +179,15 @@ line-height:40px
 
 /* sidebar */
 #sidebar, #content {
-float:none;
 width: 100%;
-padding: 10px 0;
 background-color: #ddd;
 overflow: hidden
 }
 #sidebar .menu {
 position: relative
+}
+#sidebar .menu span{
+display: none;
 }
 #sidebar .menu a {
 display: block;
@@ -189,7 +202,7 @@ background-color: #333;
 }
 #sidebar .submenu {
 }
-#sidebar .submenu a {
+#sidebar .subitem {
 margin-left:20px;
 }
 /* 
@@ -201,8 +214,6 @@ background-color: #333;
 
 /* content */
 #content {
-padding: 10px;
-background-color: #ddd;
 }
 
 /* misc */
@@ -221,9 +232,11 @@ float: right
 	.logo {
 	width: 100%;
 	}
+	#header {
+padding: 0px;}
 	#header a, #header li {
-	float:left;
-	width: 100%;
+	float:none;
+	margin: 0;
 	}
 	#top-nav {
 	display: block;
@@ -231,6 +244,9 @@ float: right
 	#nav {
 	display:none;
 	}
+	#header, #nav, #slider, #showcase, #briefinfo, #title {
+margin-bottom: 0px;
+}
 }
 
 @media screen and (min-width: 500px) {
@@ -245,7 +261,7 @@ float: right
 @media screen and (min-width: 960px) {
 	#content {
 		float:right;
-		width: 640px;
+		width: 660px;
 	}
 	#sidebar {
 		float:right;

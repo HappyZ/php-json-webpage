@@ -23,12 +23,11 @@
 	if (count($match) > 0)
 		$sublevelcount = $match->count();
 ?>
-	<div id="title">
-		<div class="left"><?php echo $thisPage;?></div>
-		<div class="right">首页 > <?php echo $thisPage;?></div>
-		<div class="clear"></div>
-	</div>
-	<div id="content" <?php if ($sublevelcount == 0) echo "style='width: 940px'"; ?>>
+	<div id="content" <?php if ($sublevelcount == 0) echo "style='width: 960px'"; ?>>
+		<div id="title">
+			<div class="left"><?php echo $companyName;?> > <?php echo $thisPage;?></div>
+			<div class="clear"></div>
+		</div>
 		<?php echo $mycontent;?>
 	</div>
 	<?php if ($sublevelcount > 0) { ?>

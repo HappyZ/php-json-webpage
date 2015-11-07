@@ -2,6 +2,7 @@
 	/* this page is index */
 	$thisPage = "首页";
 	$slider = simplexml_load_file('xmls/index_slider.xml');
+	$briefinfo = simplexml_load_file('xmls/index_briefinfo.xml');
 	require 'header.php'; 
 ?>
 	<div id="slider">
@@ -19,7 +20,14 @@
 		<div class="eachcase left">case 3</div>
 		<div class="clear"></div>
 	</div>
-	<div id="briefinfo">
-		some brief info
-	</div>
+	<ul id="briefinfo">
+		<?php
+		foreach ($briefinfo->stuff as $stuff) {
+		?>
+		<li><?php echo $stuff;?></li>
+		<?php
+		}
+		?>
+		<div class="clear"></div>
+	</ul>
 <?php require 'footer.php'; ?>
