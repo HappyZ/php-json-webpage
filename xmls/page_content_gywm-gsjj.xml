@@ -3,8 +3,7 @@
 	<title>
 		公司简介
 	</title>
-	<content><![CDATA[
-		<p>第一段</p>
-		<p>第二段</p>
-	]]></content>
+	<content>第一段
+第二段
+	</content>
 </article>

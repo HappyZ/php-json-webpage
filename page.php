@@ -1,4 +1,7 @@
 <?php 
+	/* parse markdown */
+	include 'Parsedown.php';
+	$Parsedown = new Parsedown();
 	// sanitize for security reasons
 	$xmlname = preg_replace("/[^a-zA-Z0-9\-]+/", "", htmlspecialchars($_GET["name"]));
 	$error = true;
@@ -11,7 +14,7 @@
 		{
 			$error = false;
 			$thisPage = $stuff->title;
-			$mycontent = $stuff->content;
+			$mycontent = $Parsedown->text($stuff->content);
 		}
 	}
 	/* for sidebar */

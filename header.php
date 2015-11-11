@@ -1,9 +1,6 @@
 <?php
+	require 'conf_init.php'; 
 	$navlinks = simplexml_load_file('xmls/header_navlinks.xml');
-	$companyName = "公司名称";
-	$copyright_year = "2015";
-	$keywords = "SEO: 公司关键词";
-	$description = "SEO: 公司简介";
 	if ($thisPage != '首页') { // 非首页用文章内容代替
 		$tmpstring = preg_replace('/\s+/', '', strip_tags($mycontent));
 		$description = substr($tmpstring, 0, min(strlen($tmpstring), 157))."...";
@@ -27,6 +24,9 @@
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="css/base.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="css/jsxymq.css" type="text/css"/>
+	<?php if ($thisPage == '编辑') {?>
+	<link rel="stylesheet" href="css/simplemde.min.css" type="text/css"/>
+	<?php }?>
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!--[if lt IE 9]>
 	<script src="js/html5.js"></script>
@@ -36,11 +36,14 @@
 <body>
 <div id="wrapper">
 	<div id="header">
-		<a class="logo left"><h1>公司Logo</h1></a>
-		<a class="right">添加到收藏夹</a>
+		<a class="logo left"><?php echo $mylogo;?></a>
+		<!-- 
+<a class="right">添加到收藏夹</a>
 		<li class="right">搜索框</li>
+ -->
 		<div class="clear"></div>
 	</div>
+	<?php if ($thisPage != '编辑') {?>
 	<div id='nav'>
 		<?php 
 		// here we need to find a more efficient way, so whenever user refresh the page this will not be executed again (maybe keep this, and then later on we can add a cache function)
@@ -93,3 +96,4 @@
 			</ul>
 		</nav>
 	</div>
+	<?php }?>
