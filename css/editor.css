@@ -1,0 +1,15 @@
+/*
+**	Author: HappyZ
+*/
+
+#editor_files a{
+display:inline-block;
+padding: 10px;
+margin: 10px;
+background: #eee;
+color: #333;
+}
+#editor_files a:hover{
+color: #eee;
+background: #333;
+}

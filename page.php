@@ -1,6 +1,6 @@
 <?php 
 	/* parse markdown */
-	include 'Parsedown.php';
+	include 'php_func/Parsedown.php';
 	$Parsedown = new Parsedown();
 	// sanitize for security reasons
 	$xmlname = preg_replace("/[^a-zA-Z0-9\-]+/", "", htmlspecialchars($_GET["name"]));

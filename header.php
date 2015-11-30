@@ -26,6 +26,7 @@
 	<link rel="stylesheet" href="css/jsxymq.css" type="text/css"/>
 	<?php if ($thisPage == '编辑') {?>
 	<link rel="stylesheet" href="css/simplemde.min.css" type="text/css"/>
+	<link rel="stylesheet" href="css/editor.css" type="text/css"/>
 	<?php }?>
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<!--[if lt IE 9]>

@@ -216,11 +216,6 @@ background-color: #333;
 #content {
 }
 
-/* editor */
-#editor_files a{
-display:block;
-}
-
 /* misc */
 .clear {
 clear: both
