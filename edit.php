@@ -1,4 +1,6 @@
 <?php 
+	require 'conf_init.php'; 
+	
 	$thisPage = "编辑";
 	
 	$pass = $_POST['p'];
@@ -14,7 +16,7 @@
 			<?php }
 			die();
 		} else {
-			setcookie('privateLogin', md5($pass.$nonsense));
+			setcookie('privateLogin', md5($pass.$nonsense), time()+3600, false, false, false, true);
 			header("Location: $_SERVER[PHP_SELF]");
 		}
 	}
