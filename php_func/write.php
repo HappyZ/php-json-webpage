@@ -5,7 +5,7 @@ $content = htmlspecialchars($_POST["content"]);
 if ($xmlname == "" || $content == "" || $title == "") {
 	die("Err");
 }
-$path = "xmls";
+$path = "../xmls";
 $filename = "page_content_".$xmlname.".xml";
 $string = "<?xml version='1.0' encoding='UTF-8'?>
 <article>
