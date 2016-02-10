@@ -1,17 +1,13 @@
 <?php 
 $title = htmlspecialchars($_POST["ti"]);
-$xmlname = htmlspecialchars($_POST["xml"]);
+$jsonname = htmlspecialchars($_POST["json"]);
 $content = htmlspecialchars($_POST["content"]);
-if ($xmlname == "" || $content == "" || $title == "") {
+if ($jsonname == "" || $content == "" || $title == "") {
 	die("Err");
 }
-$path = "../xmls";
-$filename = "page_content_".$xmlname.".xml";
-$string = "<?xml version='1.0' encoding='UTF-8'?>
-<article>
-	<title>".$title."</title>
-	<content>".$content."</content>
-</article>";
+$path = "../myJSONs";
+$filename = "page_content_".$jsonname.".json";
+$string = '{"'.str_replace("\n",'',$title).'":"'.str_replace("\n",'\n',$content).'"}';
 $myfile = fopen($path."/".$filename, "w") or die("Unable to open file!");
 fwrite($myfile, $string);
 fclose($myfile);

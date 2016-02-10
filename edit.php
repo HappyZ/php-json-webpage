@@ -8,7 +8,6 @@
 		if ($pass != $editPassword) {
 			if(isset($_POST))
 			{?>
-
 					<form method="POST" action="">
 					密 <input type="password" name="p"></input><br/>
 					<input type="submit" name="submit" value="Go"></input>
@@ -21,34 +20,29 @@
 		}
 	}
 	
-	require 'header.php'; 
+	require 'header.php';
 	
-	$xmlname = preg_replace("/[^a-zA-Z0-9\-]+/", "", htmlspecialchars($_GET["name"]));
-	if ($xmlname != "" && file_exists('xmls/page_content_'.basename($xmlname).'.xml'))
+	$jsonname = preg_replace("/[^a-zA-Z0-9\-]+/", "", htmlspecialchars($_GET["name"]));
+	if ($jsonname != "" && file_exists('myJSONs/page_content_'.$jsonname.'.json'))
 	{
-		$stuff = simplexml_load_file('xmls/page_content_'.basename($xmlname).'.xml');
-		if (!empty($stuff->title))
-		{
-			$error = false;
-			$title = $stuff->title;
-			$mycontent = $stuff->content;
-		}
+		$stuff = json_decode((file_get_contents('myJSONs/page_content_'.$jsonname.'.json')), true);
+		foreach($stuff as $title => $mycontent){ $mycontent = htmlspecialchars_decode($mycontent); }
 	} else {
 		$mycontent = "";
 		$title = "";
 	}
 ?>
 文件:
-<div id="editor_files"><?php $files = scandir('xmls');
+<div id="editor_files"><?php $files = scandir('myJSONs');
 foreach ($files as $file) {
 if (strpos($file,'page_content_') !== 0) continue;
-$tmp = str_replace('.xml','',str_replace('page_content_','',$file));
+$tmp = str_replace('.json','',str_replace('page_content_','',$file));
 echo "<a href='?name=".$tmp."'>".$tmp."</a>";
 }
 ?><br /><a href='edit.php'>添加新文件</a></div>
-Title: <input type="text" name="title" id="title" value="<?php echo $title;?>">
-XMLName: <input type="text" name="xmlname" id="xmlname" value="<?php echo $xmlname;?>">
-<button type="button" id="submit">Submit!</button>
+标题：<input type="text" name="title" id="title" value="<?php echo $title;?>">
+JSON文件名：<input type="text" name="jsonname" id="jsonname" value="<?php echo $jsonname;?>">
+<button type="button" id="submit">提交!</button>
 <textarea id="editor"></textarea>
 <script src="js/simplemde.min.js"></script>
 <script>
@@ -61,7 +55,7 @@ XMLName: <input type="text" name="xmlname" id="xmlname" value="<?php echo $xmlna
 		$.ajax({
 			method: "POST",
 			url: "php_func/write.php",
-			data: { ti: $("#title").val(), xml: $("#xmlname").val(), content: simplemde.value() }
+			data: { ti: $("#title").val(), json: $("#jsonname").val(), content: simplemde.value() }
 		}).done(function( msg ) {
 			alert( "Data Saved: " + msg );
 		});

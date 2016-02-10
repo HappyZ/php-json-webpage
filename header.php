@@ -1,6 +1,7 @@
 <?php
 	require 'conf_init.php'; 
-	$navlinks = simplexml_load_file('xmls/header_navlinks.xml');
+	//xml改用json
+	//$navlinks = simplexml_load_file('xmls/header_navlinks.xml');
 	if ($thisPage != '首页') { // 非首页用文章内容代替
 		$tmpstring = preg_replace('/\s+/', '', strip_tags($mycontent));
 		$description = substr($tmpstring, 0, min(strlen($tmpstring), 157))."...";
@@ -14,7 +15,7 @@
 
 <head>
 	<title><?php echo $thisPage.' | '.$companyName;?></title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
 	<?php if ($thisPage == '首页') {?>
 	<meta name="keywords" content="<?php echo $keywords;?>" />
 	<?php }?>
@@ -35,9 +36,13 @@
 </head>
 
 <body>
+<?php
+// 读取导航链接信息
+$navlinks = json_decode((file_get_contents('myJSONs/header_navlinks.json')), true);
+?>
 <div id="wrapper">
 	<div id="header">
-		<a class="logo left"><?php echo $mylogo;?></a>
+		<a class="logo left"><?php echo $mylogo; ?></a>
 		<!-- 
 <a class="right">添加到收藏夹</a>
 		<li class="right">搜索框</li>
@@ -46,55 +51,39 @@
 	</div>
 	<?php if ($thisPage != '编辑') {?>
 	<div id='nav'>
-		<?php 
-		// here we need to find a more efficient way, so whenever user refresh the page this will not be executed again (maybe keep this, and then later on we can add a cache function)
-		foreach ($navlinks->link as $link) {
-		?>
-		<div class="item left<?php if ($link['href'] == 'page-'.$xmlname.'.html') echo ' current';?>">
-			<a <?php echo "href='".$link['href']."'";?>><?php echo $link['title'];?></a>
+		<?php foreach($navlinks as $link => $info) { ?>
+		<div class="item left<?php if ($link == 'page-'.$xmlname.'.html') echo ' current';?>">
+			<a <?php echo "href='".$link.".html'";?>><?php echo $info['title'].((isset($info['eng']))?('<span>'.$info['eng'].'</span>'):'');?></a>
 			<?php
-			if ($link->count() > 0) {
+			if (isset($info["-"])) {
 			?>
 			<ul class="subnav">
-				<?php
-				foreach ($link->link as $sublink) { // only one level
-				?>
-				<li class='subitem'><a <?php echo "href='".$sublink['href']."'"; ?>><?php echo $sublink['title'];?></a></li>
-				<?php
-				}
-				?>
+				<?php foreach ($info["-"] as $sublink => $subinfo) { /* 仅一层 */ ?>
+				<li class='subitem'><a <?php echo "href='".$link."-".$sublink.".html'"; ?>><?php echo $subinfo['title'].((isset($subinfo['eng']))?('<span>'.$subinfo['eng'].'</span>'):'');?></a></li>
+				<?php } ?>
 			</ul>
-			<?php
-			}
-			?>
+			<?php } ?>
 		</div>
-		<?php
-		}
-		?>
+		<?php } ?>
 		<div class="clear"></div>
 	</div>
 	<div id="top-nav">
 		<nav class="clearfix">
 			<a href="#" id="pull">页面导航</a>
 			<ul>
-			<?php 
-			// here we need to find a more efficient way, so whenever user refresh the page this will not be executed again (maybe keep this, and then later on we can add a cache function)
-			foreach ($navlinks->link as $link) {
-			?>
-			<li><a <?php echo "href='".$link['href']."'";?>><?php echo $link['title'];?></a></li>
-				<?php
-				if ($link->count() > 0) {
-				?>
+				<?php foreach($navlinks as $link => $info) { ?>
+				<li><a <?php echo "href='".$link.".html'";?>><?php echo $info['title'].((isset($info['eng']))?('<span>'.$info['eng'].'</span>'):'');?></a></li>
 					<?php
-					foreach ($link->link as $sublink) { // only one level
+					if (isset($info["-"])) {
 					?>
-					<li><a <?php echo "href='".$sublink['href']."'";?>><?php echo $sublink['title'];?></a></li>
-					<?php
-					}
-				}
-			}
-			?>
+						<?php
+						foreach ($info["-"] as $sublink => $subinfo) { // 仅一层
+						?>
+						<li><a <a <?php echo "href='".$link."-".$sublink.".html'"; ?>><?php echo $subinfo['title'].((isset($subinfo['eng']))?('<span>'.$subinfo['eng'].'</span>'):'');?></a></li>
+						<?php } ?>
+					<?php } ?>
+				<?php } ?>
 			</ul>
 		</nav>
 	</div>
-	<?php }?>
+	<?php } ?>

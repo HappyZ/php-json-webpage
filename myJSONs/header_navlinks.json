@@ -1,0 +1,48 @@
+{
+".#"			:	{
+				"title"	:	"首&nbsp;&nbsp;&nbsp;&nbsp;页",
+				"eng"	:	"Index"
+				},
+"page-jjfa"	:	{
+				"title"	:	"解决方案",
+				"eng"	:	"Solutions",
+				"-"		:	{
+							"fa1"	:	{
+										"title"	:	"方案A",
+										"eng"	:	"Solution A"
+										},
+							"fa2"	:	{
+										"title"	:	"方案B",
+										"_eng"	:	"Solution B",
+										"-"		:	{
+													"1"	:	{
+															"title"	:	"方案B整体介绍",
+															"eng"	:	"Solution B Intro"
+															},
+													"2"	:	{
+															"title"	:	"方案B价格咨询",
+															"eng"	:	"Solution B Price"
+															}
+													}
+										}
+							}
+				},
+"page-gsxw"		:	{
+				"title"	:	"公司新闻",
+				"eng"	:	"News"
+				},
+"page-gywm"		:	{
+				"title"	:	"关于我们",
+				"eng"	:	"About",
+				"-"		:	{
+							"gsjj"	:	{
+										"title"	:	"公司简介",
+										"eng"	:	"Brief Intro"
+										},
+							"lxwm"	:	{
+										"title"	:	"联系我们",
+										"_eng"	:	"Contact Us"
+										}
+							}
+				}
+}

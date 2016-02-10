@@ -1,18 +1,14 @@
 <?php 
 	/* this page is index */
 	$thisPage = "首页";
-	$slider = simplexml_load_file('xmls/index_slider.xml');
-	$briefinfo = simplexml_load_file('xmls/index_briefinfo.xml');
 	require 'header.php'; 
+	$slider = json_decode((file_get_contents('myJSONs/index_slider.json')), true);
+	$briefinfo = json_decode((file_get_contents('myJSONs/index_briefinfo.json')), true);
 ?>
 	<div id="slider">
-		<?php
-		foreach ($slider->stuff as $stuff) {
-		?>
+		<?php foreach ($slider as $stuff) { ?>
 		<div><?php echo $stuff;?></div>
-		<?php
-		}
-		?>
+		<?php } ?>
 	</div>
 	<div id="showcase">
 		<div class="eachcase left">case 1</div>
@@ -21,13 +17,9 @@
 		<div class="clear"></div>
 	</div>
 	<ul id="briefinfo">
-		<?php
-		foreach ($briefinfo->stuff as $stuff) {
-		?>
+		<?php foreach ($briefinfo as $stuff) { ?>
 		<li><?php echo $stuff;?></li>
-		<?php
-		}
-		?>
+		<?php } ?>
 		<div class="clear"></div>
 	</ul>
 <?php require 'footer.php'; ?>
