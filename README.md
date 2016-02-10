@@ -1,2 +1,2 @@
-# php-xml-webpage
-中文PHP＋XML网站框架
+# php-json-webpage
+中文PHP＋JSON网站框架
