@@ -1,5 +1,4 @@
 <?php 
-	require 'header.php';
 	/* parse markdown */
 	include 'php_func/Parsedown.php';
 	$Parsedown = new Parsedown();
@@ -16,6 +15,7 @@
 			$mycontent = $Parsedown->text($content);
 		}
 	}
+	require 'header.php';
 	/* for sidebar */
 	$levels = explode('-', $jsonname);
 // 	var_dump($levels);
